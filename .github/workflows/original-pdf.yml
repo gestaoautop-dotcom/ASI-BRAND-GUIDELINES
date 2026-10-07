@@ -1,0 +1,27 @@
+name: Recompose original PDF
+on:
+  push:
+    branches: [main]
+    paths: ['pdf-parts/**']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recompose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recompose and verify original
+        run: |
+          cat pdf-parts/part-* > assets/asi-capital-original.pdf
+          python - <<'PY'
+          import hashlib
+          b=open('assets/asi-capital-original.pdf','rb').read()
+          assert hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest() == '127843162fae0fe89dc5a91868e94ca3a16a951e'
+          PY
+          git rm -r pdf-parts
+          git add assets/asi-capital-original.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Restore byte-identical original PDF"
+          git push

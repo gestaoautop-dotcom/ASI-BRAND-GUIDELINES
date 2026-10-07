@@ -1,0 +1,9 @@
+ASI CAPITAL — GUIA DE MARCA
+
+Abra index.html para visualizar. Os 19 materiais foram copiados sem alteração dos bytes originais.
+
+Estrutura na ordem visível da referência: capa, boas-vindas, sumário, história, sobre, missão e visão, logo, proteção, cores, tipografia, fotografia, aplicações e papelaria. Patterns complementam as aplicações. A parte final da referência recebida está cortada.
+
+Esta é a página de conteúdo. Não possui autenticação própria. Para integrar à área interna, a hospedagem deve aplicar a mesma verificação de sessão e autorização do backend existente antes de servir a página e os downloads. Não publicar esta pasta como conteúdo público para uso restrito.
+
+Os textos de missão/visão, medidas do logo e fontes oficiais aguardam documentos. As fontes exibidas são as da implementação atual do site.
